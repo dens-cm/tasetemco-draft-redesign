@@ -19,20 +19,21 @@ function _optionalChain(ops) {
   }
   return value
 }
-;('use client')
+; ('use client')
 
 import {
+  Box,
   Toaster as ChakraToaster,
   Portal,
   Spinner,
-  Stack,
   Toast,
   createToaster,
 } from '@chakra-ui/react'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const toaster = createToaster({
-  placement: 'bottom-end',
-  pauseOnPageIdle: true,
+  placement: 'top',
+  pauseOnPageIdle: true
 })
 
 export const Toaster = () => {
@@ -40,18 +41,20 @@ export const Toaster = () => {
     <Portal>
       <ChakraToaster toaster={toaster} insetInline={{ mdDown: '4' }}>
         {(toast) => (
-          <Toast.Root width={{ md: 'sm' }}>
-            {toast.type === 'loading' ? (
-              <Spinner size='sm' color='blue.solid' />
-            ) : (
-              <Toast.Indicator />
-            )}
-            <Stack gap='1' flex='1' maxWidth='100%'>
-              {toast.title && <Toast.Title>{toast.title}</Toast.Title>}
-              {toast.description && (
-                <Toast.Description>{toast.description}</Toast.Description>
-              )}
-            </Stack>
+          <Toast.Root width='25vw' p='1vw' borderRadius='1vw' boxShadow='0vw 0vw .4vw rgba(77, 77, 77, 0.42)'>
+            <Box w='100%' display='flex'>
+              <Box w='5%'>
+                {toast.type == 'loading' ? (
+                  <Spinner w='1.2vw' h='1.2vw' borderWidth='.3vw' />
+                ) : (
+                  <Toast.Indicator boxSize='1.2vw'/>
+                )}
+              </Box>
+              <Box w='95%' pl='.5vw' display='flex' flexDirection='column'>
+                {toast.title && <Toast.Title fontSize='xsm'>{toast.title}</Toast.Title>}
+                {toast.description && <Toast.Description fontSize='xsm'>{toast.description}</Toast.Description>}
+              </Box>
+            </Box>
             {toast.action && (
               <Toast.ActionTrigger>{toast.action.label}</Toast.ActionTrigger>
             )}
