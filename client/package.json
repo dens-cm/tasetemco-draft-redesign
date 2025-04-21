@@ -12,6 +12,12 @@
   "dependencies": {
     "@chakra-ui/react": "^3.16.0",
     "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@mui/x-date-pickers": "^7.28.3",
+    "axios": "^1.8.4",
+    "material-react-table": "^3.2.1",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
