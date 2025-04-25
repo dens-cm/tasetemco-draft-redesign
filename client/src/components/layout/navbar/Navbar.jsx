@@ -5,8 +5,8 @@ import {
     HiMiniInboxStack, HiMiniCircleStack, HiMiniUsers,
     HiCog6Tooth, HiArchiveBox
 } from "react-icons/hi2"
-import tasetemco_md from '../../assets/icons/tasetemco-md.png'
-import tasetemco from '../../assets/tasetemco.png'
+import tasetemco_md from '../../../assets/icons/tasetemco-md.png'
+import tasetemco from '../../../assets/tasetemco.png'
 
 export default function Navbar({ isAdmin }) {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Chakra from '@chakra-ui/react'
 import { HiMiniMagnifyingGlass, HiBell, HiMiniChevronDown, HiCog6Tooth, HiArrowRightOnRectangle, HiMiniUser } from "react-icons/hi2"
-import admin from '../../assets/icons/icon-admin.png'
+import admin from '../../../assets/icons/icon-admin.png'
 
 export default function Header() {
     return (

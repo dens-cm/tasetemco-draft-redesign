@@ -3,13 +3,13 @@ import * as Chakra from '@chakra-ui/react'
 import { createTheme } from '@mui/material/styles'
 import Header from '../header/Header'
 import Navbar from '../navbar/Navbar'
-import Dashboard from '../../pages/admin/Dashboard'
-import top_right from '../../assets/top-right.png'
-import bottom_left from '../../assets/bottom-left.png'
-import bottom_right from '../../assets/bottom-right.png'
-import building from '../../assets/building.png'
+import Dashboard from '../../../pages/admin/Dashboard'
+import top_right from '../../../assets/top-right.png'
+import bottom_left from '../../../assets/bottom-left.png'
+import bottom_right from '../../../assets/bottom-right.png'
+import building from '../../../assets/building.png'
 
-const getGreeting = () => {
+const greetings = () => {
   const hour = new Date().getHours()
   if (hour < 12) return "Morning, "
   if (hour < 18) return "Afternoon, "
@@ -32,7 +32,7 @@ export default function Tasetemco({ isAdmin }) {
       </Chakra.Box>
       <Chakra.Box w='83%' h='100%' display='flex' flexDirection='column'>
         {/* Header */}
-        <Chakra.Box zIndex='3' w='83%' position='absolute'>
+        <Chakra.Box zIndex='1' w='83%' position='absolute'>
           <Header />
         </Chakra.Box>
         {/* background */}
@@ -50,8 +50,9 @@ export default function Tasetemco({ isAdmin }) {
             <Chakra.Image src={bottom_right} alt='tasetemco' w='100%' h='100%' objectFit='cover' />
           </Chakra.Box>
         </Chakra.Box>
-        <Chakra.Box w='100%' h='100%' p='5.2vw 1vw 1vw 1vw' overflow='auto'>
-          <Dashboard getGreeting={getGreeting} tableTheme={tableTheme} />
+        {/* contents */}
+        <Chakra.Box w='100%' h='100%' p='6vw 1vw 1vw' overflow='auto' scrollbar="hidden">
+          <Dashboard greetings={greetings} tableTheme={tableTheme} />
         </Chakra.Box>
       </Chakra.Box>
     </Chakra.Box>

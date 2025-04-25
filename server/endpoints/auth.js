@@ -11,7 +11,7 @@ const generateAccessToken = (userId, isAdmin) => {
 
 // refresh token
 const generateRefreshToken = (userId, isAdmin) => {
-    return jwt.sign({ userId, isAdmin }, process.env.REFRESH_SECRET, { expiresIn: '1d' })
+    return jwt.sign({ userId, isAdmin }, process.env.REFRESH_SECRET, { expiresIn: '2d' })
 }
 
 router.post("/login", async (req, res) => {

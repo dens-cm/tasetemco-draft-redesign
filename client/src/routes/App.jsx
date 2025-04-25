@@ -5,7 +5,7 @@ import { Box, Image, Spinner, Text } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from '../config/AuthContext'
 import LoginPage from '../pages/authentication/Login'
-import Tasetemco from '../layout/container/Tasetemco'
+import Tasetemco from '../components/layout/container/Tasetemco'
 import tasetemco_image from '../assets/tasetemco.png'
 
 export default function App() {

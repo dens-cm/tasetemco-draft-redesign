@@ -26,7 +26,6 @@ axiosInstance.interceptors.response.use(
             } catch (refreshError) {
                 showToast({ title: 'Error', description: `${refreshError.message}`, status: 'error' })
                 localStorage.removeItem("accessToken")
-                window.location.href = '/'
                 return Promise.reject(refreshError)
             } 
         }
