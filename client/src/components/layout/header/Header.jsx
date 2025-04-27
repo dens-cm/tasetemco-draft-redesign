@@ -1,9 +1,13 @@
 import React from 'react'
 import * as Chakra from '@chakra-ui/react'
 import { HiMiniMagnifyingGlass, HiBell, HiMiniChevronDown, HiCog6Tooth, HiArrowRightOnRectangle, HiMiniUser } from "react-icons/hi2"
+import LogoutDialog from '../../Dialog/LogoutDialog'
 import admin from '../../../assets/icons/icon-admin.png'
 
 export default function Header() {
+
+    const [logoutDialogOpen, isLogoutDialogOpen] = React.useState(false)
+
     return (
         <Chakra.Box w='100%' p='1vw' bg='rgba(255, 255, 255, 0.57)' boxShadow='0 .1vw .5vw 0 rgba(153, 153, 153, 0.18)' backdropFilter='blur(1vw)'>
             <Chakra.Box w='100%' h='2.2vw' display='flex' alignItems='center'>
@@ -39,8 +43,8 @@ export default function Header() {
                                         <Chakra.Text><Chakra.Icon mr='.3vw' as={HiCog6Tooth} color='black' boxSize='sm' /> Settings</Chakra.Text>
                                     </Chakra.Menu.Item>
                                     <Chakra.Box h='.1px' m='0 .5vw' bg='rgba(136, 136, 136, 0.42)' />
-                                    <Chakra.Menu.Item mt='.5vw' cursor='pointer' _hover={{ bg: 'hover', borderRadius: '.7vw' }} transition='.3s'>
-                                        <Chakra.Text fontWeight='bold'><Chakra.Icon mr='.3vw' as={HiArrowRightOnRectangle} color='black' boxSize='sm' /> Logout</Chakra.Text>
+                                    <Chakra.Menu.Item onClick={() => isLogoutDialogOpen(true)} mt='.5vw' cursor='pointer' _hover={{ bg: 'hover', borderRadius: '.7vw' }} transition='.3s'>
+                                        <Chakra.Text fontWeight='bold' display='flex' alignItems='center'><Chakra.Icon mr='.5vw' as={HiArrowRightOnRectangle} color='black' boxSize='sm' /> Logout</Chakra.Text>
                                     </Chakra.Menu.Item>
                                 </Chakra.Menu.Content>
                             </Chakra.Menu.Positioner>
@@ -48,6 +52,9 @@ export default function Header() {
                     </Chakra.Menu.Root>
                 </Chakra.Box>
             </Chakra.Box>
+
+            {/* Dialog */}
+            <LogoutDialog logoutDialogOpen={logoutDialogOpen} isLogoutDialogOpen={isLogoutDialogOpen}/>
         </Chakra.Box>
     )
 }

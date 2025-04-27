@@ -100,12 +100,41 @@ export const buttonRecipe = defineRecipe({
                     color: 'secondary'
                 }
             },
+            neutral: {
+                h: '2.7vw',
+                bg: 'base',
+                fontSize: 'xsm',
+                color: 'primary',
+                _hover: {
+                    bg: 'primary',
+                    color: 'base'
+                }
+            },
+            warning: {
+                h: '2.7vw',
+                bg: 'red',
+                fontSize: 'xsm',
+                color: 'base',
+                _hover: {
+                    bg: 'primary',
+                    color: 'base'
+                }
+            },
             button_icon: {
                 h: '2.2vw',
                 bg: 'white',
                 fontSize: 'xsm',
                 color: 'accent',
                 boxShadow: '0vw 0vw .4vw rgba(49, 49, 49, 0.16)',
+                _hover: {
+                    bg: 'hover'
+                }
+            },
+            button_icon_no_backshadow: {
+                h: '2.2vw',
+                bg: 'white',
+                fontSize: 'xsm',
+                color: 'accent',
                 _hover: {
                     bg: 'hover'
                 }

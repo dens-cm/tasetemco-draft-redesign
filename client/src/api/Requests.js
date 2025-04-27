@@ -60,7 +60,7 @@ export const fetchMembers = async () => {
     }
 }
 
-export const logout = async (user, isAdmin, loading, closeModal, navigate, showToast) => {
+export const logout = async (user, isAdmin, loading, closeDialog, navigate, showToast) => {
     try {
         loading(true)
 
@@ -69,12 +69,11 @@ export const logout = async (user, isAdmin, loading, closeModal, navigate, showT
 
         user(null)
         isAdmin(null)
-        showToast({ title: 'Success', description: request.data.message, status: 'info' })
-        closeModal()
+        showToast({ title: 'Success', description: request.data.message, status: 'success' })
+        closeDialog()
         navigate('/login')
     } catch (error) {
-        const errorMessage = error.response?.data?.error || error.message || 'An error occurred'
-        showToast({ title: 'Error', description: errorMessage, status: 'warning' })
+        showToast({ title: 'Error', description: error.message, status: 'warning' })
     } finally {
         loading(false)
     }
