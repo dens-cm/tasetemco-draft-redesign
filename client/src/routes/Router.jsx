@@ -1,6 +1,6 @@
 import React from 'react'
 import { Toaster } from '../components/ui/toaster'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box, Image, Spinner, Text } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from '../config/AuthContext'
@@ -8,7 +8,7 @@ import LoginPage from '../pages/authentication/Login'
 import Tasetemco from '../components/layout/container/Tasetemco'
 import tasetemco_image from '../assets/tasetemco.png'
 
-export default function App() {
+export default function Router() {
 
   function Protected({ children, requireAuth }) {
     const { user, isAdmin, loading } = useAuth()
@@ -37,13 +37,13 @@ export default function App() {
     <AuthProvider>
       <Box w='100vw' h='100vh'>
         <Toaster />
-        <Router>
+        <BrowserRouter>
           <Routes>
+            <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<Protected requireAuth />} />
             <Route path="/login" element={<Protected requireAuth={false}><LoginPage /></Protected>} />
-            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </Router>
+        </BrowserRouter>
       </Box>
     </AuthProvider>
   )

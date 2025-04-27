@@ -13,7 +13,7 @@ axiosInstance.interceptors.response.use(
     async error => {
         const originalRequest = error.config
 
-        if (error && !originalRequest._retry) {
+        if (!originalRequest._retry && localStorage.getItem("accessToken") !== null) {
             originalRequest._retry = true
             try {
                 const refreshRes = await axios.post(API_ROUTES.REFRESH, {}, { withCredentials: true })

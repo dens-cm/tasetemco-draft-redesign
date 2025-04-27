@@ -1,8 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import axiosInstance from './AxiosInstance'
 import API_ROUTES from './APIRoutes'
-import Toast from '../components/toast/Toast'
 
 const AuthContext = React.createContext()
 
@@ -12,7 +10,6 @@ export const AuthProvider = ({ children }) => {
     const [isAdmin, setIsAdmin] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
     const hasFetchedUser = React.useRef(false)
-    const showToast = Toast()
 
     React.useEffect(() => {
         if (hasFetchedUser.current) return
@@ -26,8 +23,7 @@ export const AuthProvider = ({ children }) => {
 
                 setUser(response.data.user)
                 setIsAdmin(response.data.user.isAdmin)
-            } catch (error) {
-                showToast({ title: 'Error', description: `${error.message}`, status: 'error' })
+            } catch {
                 setUser(null)
                 localStorage.removeItem("accessToken")
             } finally {

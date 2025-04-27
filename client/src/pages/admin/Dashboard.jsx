@@ -16,6 +16,7 @@ export default function Dashboard({ greetings, tableTheme }) {
 
     return (
         <Chakra.Box w='100%'>
+            
             {/* Greetings */}
             <Chakra.Box w='100%' display='flex' alignItems='center'>
                 <Chakra.Box w='50%' display='flex' flexDirection='column'>
@@ -57,7 +58,7 @@ export default function Dashboard({ greetings, tableTheme }) {
                                 muiBottomToolbarProps={{ sx: { backgroundColor: 'transparent' } }}
                                 muiTopToolbarProps={{ sx: { backgroundColor: 'transparent' } }}
                                 muiTableHeadProps={{ sx: { backgroundColor: 'transparent' } }}
-                                enableStickyHeader={true}
+                                enableStickyHeader={false}
                                 enableRowActions={false}
                                 enableColumnActions={false}
                                 initialState={{
@@ -241,7 +242,7 @@ export default function Dashboard({ greetings, tableTheme }) {
                             muiBottomToolbarProps={{ sx: { backgroundColor: 'transparent' } }}
                             muiTopToolbarProps={{ sx: { backgroundColor: 'transparent' } }}
                             muiTableHeadProps={{ sx: { backgroundColor: 'transparent' } }}
-                            enableStickyHeader={true}
+                            enableStickyHeader={false}
                             enableRowActions={false}
                             initialState={{ density: 'compact' }}
                         />
@@ -269,7 +270,7 @@ export default function Dashboard({ greetings, tableTheme }) {
                             <Chakra.Table.Root variant='none' size='sm'>
                                 <Chakra.Table.Header h='2.5vw'>
                                     <Chakra.Table.Row>
-                                        <Chakra.Table.ColumnHeader borderBottom='.1vw solid' borderColor='rgba(123, 123, 123, 0.25)' colSpan={2} color='primary' fontSize='xsm'>CASH BREAKDOWN</Chakra.Table.ColumnHeader>
+                                        <Chakra.Table.ColumnHeader borderBottom='.1vw solid' borderColor='rgba(123, 123, 123, 0.25)' colSpan={2} color='primary' fontSize='xsm'>WRS DAILY SALES REPORT</Chakra.Table.ColumnHeader>
                                     </Chakra.Table.Row>
                                 </Chakra.Table.Header>
                                 <Chakra.Table.Body color='primary'>
@@ -295,7 +296,7 @@ export default function Dashboard({ greetings, tableTheme }) {
                                     </Chakra.Table.Row>
                                     <Chakra.Table.Row h='2vw' bg='transparent' display='flex' alignItems='center' justifyContent='space-between'>
                                         <Chakra.Table.Cell fontSize='xsm' fontWeight='700'>CREDIT SALES:</Chakra.Table.Cell>
-                                        <Chakra.Table.Cell fontSize='xsm'>₱ 2, 500.00</Chakra.Table.Cell>
+                                        <Chakra.Table.Cell fontSize='xsm'><b>₱ 2, 500.00</b></Chakra.Table.Cell>
                                     </Chakra.Table.Row>
                                 </Chakra.Table.Body>
                             </Chakra.Table.Root>
@@ -369,14 +370,14 @@ export default function Dashboard({ greetings, tableTheme }) {
                                     </Chakra.Table.Row>
                                     <Chakra.Table.Row w='100%' h='2vw' bg='transparent' display='flex' alignItems='center' justifyContent='space-between'>
                                         <Chakra.Table.Cell fontSize='xsm' fontWeight='700'>GRAND TOTAL:</Chakra.Table.Cell>
-                                        <Chakra.Table.Cell fontSize='xsm'>₱ 10, 500.00</Chakra.Table.Cell>
+                                        <Chakra.Table.Cell fontSize='xsm'><b>₱ 10, 500.00</b></Chakra.Table.Cell>
                                     </Chakra.Table.Row>
                                 </Chakra.Table.Body>
                             </Chakra.Table.Root>
                         </Chakra.Box>
-                        <Chakra.Text mt='1vw' color='primary'>Prepared by: Adrian Morales</Chakra.Text>
-                        <Chakra.Text mt='1vw' color='primary'>Recieved by: Manager</Chakra.Text>
-                        <Chakra.Text mt='1vw' color='primary'>Checked by: Auditor</Chakra.Text>
+                        <Chakra.Text mt='1vw' color='primary'>Prepared by: <b>Adrian Morales</b></Chakra.Text>
+                        <Chakra.Text mt='1vw' color='primary'>Recieved by: <b>Manager</b></Chakra.Text>
+                        <Chakra.Text mt='1vw' color='primary'>Checked by: <b>Auditor</b></Chakra.Text>
                         <Chakra.Text w='100%' variant='heading' mt='2vw' color='primary' textAlign='center'>Auditor / BOD Member</Chakra.Text>
                     </Chakra.Box>
                 </Chakra.Box>

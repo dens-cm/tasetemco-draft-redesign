@@ -8,7 +8,7 @@ import {
 import tasetemco_md from '../../../assets/icons/tasetemco-md.png'
 import tasetemco from '../../../assets/tasetemco.png'
 
-export default function Navbar({ isAdmin }) {
+export default function Navbar({ isAdmin, view, setView }) {
     return (
         <Chakra.Box w='100%' h='100%' p='1vw' display='flex' flexDirection='column' bg='base'>
             <Chakra.Box w='100%' h='2.2vw' mb='1vw' display='flex' alignItems='center'>
@@ -17,8 +17,8 @@ export default function Navbar({ isAdmin }) {
             </Chakra.Box>
             <Chakra.Box w='100%' h='.1px' bg='rgba(136, 136, 136, 0.14)' />
             <Chakra.Box w='100%' h='100%' mt='1.5vw' pl='2vw'>
-                <Chakra.Button variant='selected_left' w='100%' fontWeight='400'><Chakra.Icon as={HiSquares2X2} boxSize='sm' />Dashboard</Chakra.Button>
-                <Chakra.Button variant='unselected_left' w='100%' mt='.3vw' fontWeight='400'><Chakra.Icon as={HiArchiveBox} boxSize='sm' />Inventory</Chakra.Button>
+                <Chakra.Button onClick={() => {setView('dashboard')}} variant={view === 'dashboard' ? 'selected_left' : 'unselected_left'} w='100%' fontWeight='400'><Chakra.Icon as={HiSquares2X2} boxSize='sm' />Dashboard</Chakra.Button>
+                <Chakra.Button onClick={() => {setView('inventory')}} variant={view === 'inventory' ? 'selected_left' : 'unselected_left'} w='100%' mt='.3vw' fontWeight='400'><Chakra.Icon as={HiArchiveBox} boxSize='sm' />Inventory</Chakra.Button>
                 <Chakra.Button variant='unselected_left' w='100%' mt='.3vw' fontWeight='400'><Chakra.Icon as={HiMiniCircleStack} boxSize='sm' />Lending</Chakra.Button>
                 <Chakra.Button variant='unselected_left' w='100%' mt='.3vw' fontWeight='400'><Chakra.Icon as={HiMiniRectangleGroup} boxSize='sm' />Canteen</Chakra.Button>
                 <Chakra.Button variant='unselected_left' w='100%' mt='.3vw' fontWeight='400'><Chakra.Icon as={HiMiniInboxStack} boxSize='sm' />Water Refilling</Chakra.Button>
