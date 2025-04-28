@@ -1,5 +1,5 @@
-const isProd = import.meta.env.VITE_PRODUCTION === 'false'
-const URL = isProd ? import.meta.env.VITE_DEV_URL : import.meta.env.VITE_PROD_URL
+const isProd = import.meta.env.VITE_PRODUCTION === 'true'
+const URL = isProd ? import.meta.env.VITE_PROD_URL : import.meta.env.VITE_DEV_URL
 
 const API_ROUTES = {
     LOGIN: `${URL}/auth/login`,
