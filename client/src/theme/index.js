@@ -1,5 +1,5 @@
 import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react'
-import { textRecipe, headingRecipe, buttonRecipe, inputRecipe, cardRecipe } from './Components'
+import { textRecipe, headingRecipe, buttonRecipe, inputRecipe, cardRecipe } from './components'
 
 const config = defineConfig({
     theme: {
